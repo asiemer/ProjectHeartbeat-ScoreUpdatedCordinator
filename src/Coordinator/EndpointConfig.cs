@@ -10,6 +10,7 @@ namespace Coordinator
             configuration.UseSerialization<XmlSerializer>();
             configuration.EnableInstallers();
             configuration.UsePersistence<NHibernatePersistence>();
+            configuration.UseTransport<SqlServerTransport>();
             configuration.Conventions().DefiningEventsAs(t => t.Namespace != null && t.Namespace.StartsWith("Projects.Contracts.Events"));            
         }
     }
